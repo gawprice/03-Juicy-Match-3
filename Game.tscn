@@ -1,0 +1,84 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Grid/grid.gd" type="Script" id=1]
+[ext_resource path="res://Pieces/Piece Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/HUD.gd" type="Script" id=3]
+[ext_resource path="res://Assets/FFF_NEPSZA-BADSAG-Bold.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://UI/Camera.gd" type="Script" id=5]
+[ext_resource path="res://Assets/music.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/snake.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/dog.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/cow.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/parrot.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/frog.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/buffalo.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/zebra.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assets/whale.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/duck.wav" type="AudioStream" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
+
+[node name="Game" type="Node2D"]
+
+[node name="grid" type="Node2D" parent="."]
+script = ExtResource( 1 )
+width = 7
+height = 10
+xStart = 80
+yStart = 832
+offset = 70
+background = ExtResource( 2 )
+
+[node name="HUD" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="HUD"]
+margin_right = 576.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "Score: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = ExtResource( 5 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
+[node name="Dog" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Cow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Snake" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="Buffalo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Duck" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="Parrot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="Whale" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="Zebra" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="Frog" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
